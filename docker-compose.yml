@@ -1,0 +1,9 @@
+version: '3.4'
+
+services:
+  cnn-server:
+    build: .
+    restart: always
+    container_name: Cnn-Server-Container
+    ports:
+      - '8888:8888'
