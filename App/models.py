@@ -84,7 +84,7 @@ def model_run_main(file_path):
     for images_categorie in images_categories:
         # print(classes[0][a], images_categorie)
 
-        if classes[0][a] > 0:
+        if classes[0][a] > 0.0:
             print(classes[0][a], images_categorie)
         else:
             pass

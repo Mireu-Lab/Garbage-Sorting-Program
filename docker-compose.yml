@@ -1,9 +1,9 @@
 version: '3.4'
 
 services:
-  cnn-server:
+  garbage-sorting-program:
     build: .
     restart: always
-    container_name: Cnn-Server-Container
+    container_name: API-program
     ports:
-      - '8888:8888'
+      - '5002:80'
