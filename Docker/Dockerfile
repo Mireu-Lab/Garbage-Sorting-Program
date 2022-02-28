@@ -3,7 +3,7 @@ FROM python:3
 RUN mkdir app
 WORKDIR app
 
-COPY . .
+COPY ../ .
 
 RUN sh Install/install.sh
 
