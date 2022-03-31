@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  hana-program:
+    build: .
+    restart: always
+    ports:
+      - '12314:80'

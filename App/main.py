@@ -1,22 +1,30 @@
-from fastapi import FastAPI, File, UploadFile
-from models import model_run_main
-import uvicorn
-import shutil
+from flask import Flask, render_template, request
+from werkzeug.utils import secure_filename
+from models import *
 
-app = FastAPI()
+app = Flask(__name__)
 
-@app.post("/files/")
-async def create_file(file: bytes = File(...)):
-    return {"file_size": len(file)}
+# 파일 업로드
+@app.route('/appinventor', methods=['POST'])
+def file_upload():
+    file = request.get_data()
 
-@app.post("/uploadfile/")
-async def create_upload_file(file: UploadFile = File(...)):
-    file_location = f"Data/{file.filename}"
+    with open("Data/1.png", "wb") as f:
+        f.write(file)
+        f.close()
+
+    return model_run_main("Data/1.png")
+
+@app.route('/fileupload', methods=['POST'])
+def file_upload():
+    image_path = "./Data/"
+    file = request.files['file']
+    	
+    filename = secure_filename(file.filename)
+    os.makedirs(image_path, exists_ok=True)
+    file.save(os.path.join(image_path, filename))
     
-    with open(file_location, "wb+") as file_object:
-        shutil.copyfileobj(file.file, file_object)    
-    
-    return {"info": file_location, "status" : model_run_main(file_location)}
+    return model_run_main(image_path+filename)
 
 if __name__ == '__main__':
-    uvicorn.run(app, host='0.0.0.0', port=8800)
+    app.run(host='0.0.0.0', port=8090)

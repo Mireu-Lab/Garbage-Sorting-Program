@@ -1,5 +1,5 @@
 tensorflow
-python-multipart
-pydantic
-fastapi[all]
-uvicorn[standard]
+flask
+werkzeug
+pillow
+scipy

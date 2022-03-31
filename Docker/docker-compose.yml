@@ -1,9 +1,0 @@
-version: '3.4'
-
-services:
-  garbage-sorting-program:
-    build: .
-    restart: always
-    container_name: API-program
-    ports:
-      - '5002:80'

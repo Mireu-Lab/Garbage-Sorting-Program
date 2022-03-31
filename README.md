@@ -1,16 +1,12 @@
 # Garbage Sorting Program
 
----
-
 ## 개요
 
 쓰래기 분류 알고리즘을 이용하여 쓰래기의 분류작업을 더 손쉽게 할수있게 도와주는 분류 AI입니다.
 
 해당 프로그램은 쓰래기 분류 프로그램을 개발하기위해서 만들어진 레포입니다.
 
-해당 프로그램의 데이터셋은 [여기](https://aihub.or.kr/node/27708)을 클릭하시면 들어가실수있습니다.
-
----
+해당 프로그램의 데이터셋은 [여기](https://www.kaggle.com/asdasdasasdas/garbage-classification)을 클릭하시면 들어가실수있습니다.
 
 ## 작동 방식
 
@@ -18,8 +14,7 @@
 
 리턴한 데이터는 앱 블루투스을 이용하여 쓰래기통과 연동하여 쓰래기의 분류 위치을 알려줍니다.
 
----
-
 ## 참고 자료
 
 - https://www.koreascience.or.kr/article/CFKO202125036420362.pdf
+- https://www.kaggle.com/asdasdasasdas/garbage-classification
