@@ -8,13 +8,26 @@
 
 해당 프로그램의 데이터셋은 [여기](https://www.kaggle.com/asdasdasasdas/garbage-classification)을 클릭하시면 들어가실수있습니다.
 
-## 작동 방식
 
-서버 <-> 클라이언트 형식으로 작동이 되며 클라이언트에서 받은 이미지을 서버에 전송하여 분류후 JSON으로 리턴을 시킵니다.
+## API 
 
-리턴한 데이터는 앱 블루투스을 이용하여 쓰래기통과 연동하여 쓰래기의 분류 위치을 알려줍니다.
+```shell
+curl -i -X POST \
+    -H "Content-Type:image/jpeg" \
+    -T "{file_location}.{file_type}" \
+    'http://9aea11c286.mireu.xyz/app'
+```
 
-## 참고 자료
+동작 결과시 아래와 같이 실행이됩니다
 
-- https://www.koreascience.or.kr/article/CFKO202125036420362.pdf
-- https://www.kaggle.com/asdasdasasdas/garbage-classification
+```json
+{
+	"trash" : 1
+}
+```
+
+ 
+
+`{"trash":1}` 앞 내용은 쓰래기 결과이며 뒤에있는 숫자는 정확도을 출력하게 됩니다
+
+해당 API는 금속, 유리, 종이, 일반쓰래기, 박스, 플라스틱을 분류하실 수 있습니다.
