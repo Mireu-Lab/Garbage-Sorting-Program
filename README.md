@@ -1,7 +1,7 @@
 # Garbage Sorting Program
 
 
-1. 개요
+### 1. 개요
 
 쓰래기 분류 알고리즘을 이용하여 쓰래기의 분류작업을 더 손쉽게 할수있게 도와주는 분류 AI입니다.
 
@@ -10,7 +10,9 @@
 해당 프로그램의 데이터셋은 [여기](https://www.kaggle.com/asdasdasasdas/garbage-classification)을 클릭하시면 들어가실수있습니다.
 
 
-2. API 
+
+
+### 2. API 
 
 ```shell
 curl -i -X POST \
