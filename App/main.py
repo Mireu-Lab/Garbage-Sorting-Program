@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, url_for
+from flask import Flask, render_template, redirect, request
 from werkzeug.utils import secure_filename
 from models import *
 
@@ -7,7 +7,7 @@ app = Flask(__name__)
 @app.route('/')
 def info_pages():
     if request.method == "GET":
-        return render_template("info.html")
+        return redirect("http://hana.mireu.xyz")
     else:
         return "Incorrect connection method"
 
