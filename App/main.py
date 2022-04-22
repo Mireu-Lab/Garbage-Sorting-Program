@@ -1,5 +1,4 @@
 from flask import Flask, render_template, redirect, request
-from werkzeug.utils import secure_filename
 from models import *
 
 app = Flask(__name__)
